@@ -42,6 +42,7 @@ const game2 = {
     checkWinner: function(arr) {
         var checkResult = false;
         var firstElement = arr[0].innerHTML;
+        if (firstElement==="") {this.cntr += 1;}
         if (firstElement === "X" || firstElement === "O") {
 
             for (var i = 1; i < arr.length; i++) {
@@ -56,6 +57,7 @@ const game2 = {
 
             }
         }
+
         return checkResult;
 
     }

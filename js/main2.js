@@ -35,6 +35,7 @@ const clearboard = function() {
 // In case of Player2 - user enters size
 const createBoard = function(boardSize) {
 
+    boardSize = +boardSize;
     if (boardSize !== "" && typeof(boardSize) !== 'undefined') {
         for (let i = 0; i < boardSize; i++) {
             var row = $('<tr />').appendTo('#tbl');
@@ -47,9 +48,11 @@ const createBoard = function(boardSize) {
                 }).appendTo(row);
                 cell.addClass('row' + i);
                 cell.addClass('col' + j);
+
                 if (i === j) {
                     cell.addClass("diag0");
-                } else if ((i + j) === (boardSize - 1)) {
+                }
+                if ((i + j) === (boardSize-1 )) {
                     cell.addClass("diag1");
                 }
 
@@ -252,7 +255,7 @@ $(document).ready(function() {
     const winner = function(gridSize, curBoxID) {
         result = false;
 
-        if ($('#tbl tr').length > 0) { //debugger;
+        if ($('#tbl tr').length > 0) {
             game2.cntr =0;
             for (let i = 0; i < gridSize; i++) {
                 if (game2.checkWinner($('.row' + i)) === true || game2.checkWinner($('.col' + i)) === true || game2.checkWinner($('.diag0')) === true || game2.checkWinner($('.diag1')) === true) {
