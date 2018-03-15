@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css?family=Rammetto+One');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+body {
+  /* width:960px; */
+  margin: 0 auto;
+  text-align: center;
+  /* background-color: pink; */
+  /* background-image: url("/project0/images/notebook_2.jpg"); */
+  background-image:url("../images/notebook_3.jpg") ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+
+}
+#container {
+  text-align: center;
+  margin-top: 50px;
+
+}
+table {
+  margin-left:auto;
+  margin-right:auto;
+  border-spacing: 0.5rem;
+  border-collapse: collapse;
+
+  /* border: 1px solid black; */
+}
+
+td {
+
+   color: Blue;
+   font-style: bold;
+   border: 2px groove #e82171;
+   font-family: 'Indie Flower', cursive;
+
+
+   /* border-collapse: collapse; */
+}
+.boxes {
+  height: 5em;
+  width: 5em;
+  text-align: center;
+}
+
+#playAgain{
+
+  margin-top: 1em;
+  width:10em;
+  height: 3em;
+  color: black;
+  background: #ffe6e6;
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+}
+.players {
+  color: black;
+  height:2em;
+  widows: 2em;
+  margin-top:0.5em;
+  border: none;
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
+  background-color: transparent;
+  /* background: #ffe6e6; */
+
+}
+#gridSize {
+  width:60px;
+  height:20px;
+  text-align:right;
+  font-family: 'Indie Flower', cursive;
+  font-size: 15px;
+
+}
+.clearBoard {
+
+  /* background-color: white; */
+
+}
+.higlight {
+  background-color:#cce6ff;
+
+}
+.nobordersT {
+    border-top: 0;
+}
+.nobordersB {
+    border-bottom: 0;
+}
+.nobordersL {
+    border-left: 0;
+}
+.nobordersR {
+    border-right: 0;
+}
+.lineThrough{
+   text-decoration: line-through;
+}
+h1{
+
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}
+h2 {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+
+}
+/* h1h2 p{
+  font-family: 'Exo 2', sans-serif;
+} */
+
+/* .Nhiglight {
+  background-color: #ccc;
+
+} */
+p {
+
+  font-family: 'Indie Flower', cursive ;
+  font-size: 20px;
+}
+.players:hover {
+    background-color: #ffe6e6;
+}
+
+.displayNone {
+  display: none;
+}
