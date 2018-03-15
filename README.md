@@ -42,7 +42,7 @@ const createBoard = function(boardSize) {
   }
 }
 
-````````````````````````````
+~~~~~~~~~~~~~~~~~~~~
 Future Improvements:
 **Improved AI - refer to minimax algorithm
 **Work on CSS - try to incorporate more animations and nicer backgrounds, icon selection instead of X,O
