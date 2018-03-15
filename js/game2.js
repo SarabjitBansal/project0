@@ -20,43 +20,39 @@ const game2 = {
   aiPlayer:"X",
   huPlayer:"O",
   playerNo:"",
-  clearBoard: function() {
+  cntr:0,
 
-  },
+  startGame: function()
+  {
+    if ( this.letterPlayed !== "" && typeof(this.letterPlayed)!== "undefined")
+    {
+      if (this.letterPlayed === "X") { this.letterPlayed="O"; }
+      else if (this.letterPlayed === "O"){ this.letterPlayed="X"; }
 
-  startGame: function() {
-    if ( this.letterPlayed !== "" && typeof(this.letterPlayed)!== "undefined") {
-      if (this.letterPlayed === "X") {
-        this.letterPlayed="O";
-      } else if (this.letterPlayed === "O"){
-          this.letterPlayed="X";
-        }
-      }else {
-        this.letterPlayed="X";
-
-
-     }
-     return this.letterPlayed;
+    } else { this.letterPlayed="X";
+          }
+      return this.letterPlayed;
   },
 
   checkWinner: function(arr) {
+
     var checkResult = false;
-    var cntr =0;
     var firstElement = arr[0].innerHTML;
-    if (firstElement ==="X"|| firstElement === "O") {
-      cntr =0;
+    if (firstElement ==="X"|| firstElement === "O")
+    {
+
       for (var i = 1; i < arr.length; i++) {
+        this.cntr +=1;
         if (arr[i].innerHTML === firstElement) {
-          checkResult= true;
-          //cntr = cntr +1;
-          this.winnerCheck = firstElement;
-        } else {
-          checkResult =false;
-          return checkResult;
-        }
+        checkResult= true;
+        this.winnerCheck = firstElement;
+      } else {
+        checkResult =false;
+        return checkResult; }
+
       }
     }
     return checkResult;
-  }
 
+  }
 };

@@ -1,52 +1,52 @@
-# project 0
-## sunheadings
+# Project 0
+  by Sarabjit Bansal.
 
-some *regular* getBoxTest
+## Tic Tac Toe Game
 
-this is new paragraph
-some*more* regular text
-some_more_ regular text
-this is  ***new*** paragraph
+Tic-tac-toe is a one or two player game. Players can choose X or O taking turns marking cells in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical or diagonal row wins the game.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This project includes:
+HTML
+Java script
+CSS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-## lists
+##Game has two modes:
 
-*list item
-*second console
-  *sub item two
+*1 Player
+*2 Players
 
-  ### Marx. Brothers
+1 Player - In this mode user plays(O) with the computer(X). There is a timer for placing (X) against the users move(O).
 
-  1.Grouch
-  1.Harpo
-  1.Chico
+![alt text](screenshots/1.png "1 Player Game")
 
+2 Players - In this mode 2 players can play game choosing either X or O. There is an additional option of choosing the grid size of 3 or 4 in this mode. Grids are created in Javascript.
 
-~~~~~~~
+![alt text](screenshots/2.png "2 Player Game")
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This project has two .js files - main2.js and game2.js. The game2.js file has all the functionalty and main2.js is the presentation file.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This function creates the N*N size board.
+````````````````javascript
+const createBoard = function(boardSize) {
 
-![Bill
-Maurray](http://fillmurray.com/50/70)
+  if (boardSize !== "" && typeof(boardSize) !== 'undefined') {
+    for (let i = 0; i < boardSize; i++) {
+      var row = $('<tr />').appendTo('#tbl');
+      for (let j = 0; j < boardSize; j++) {
 
-http://twitter.com
-
-[Twitter or whatever] (http://twitter.com/)
-
-To quote someone famous:
->Famous insipirational quote
-
-I don't find it insipirational
-
-
-You shoiuld use the `<section>` tag
-
-There are too many variables called 'score' in this project.
-
-## Github flavored markdown
-
-###Function expression example
-
-````javascript
-const sayhello = function () {
-  console.log('Hello!')
+        let tabId = `B${i}${j}`;
+        var cell = $('<td />').attr({id:tabId, class : 'boxes'}).appendTo(row);
+      }
+    }
+  }
 }
 
-~~this is stuck out~~ updated docs
+````````````````````````````
+Future Improvements:
+**Improved AI - refer to minimax algorithm
+**Work on CSS - try to incorporate more animations and nicer backgrounds, icon selection instead of X,O
+**Improved user experience
+**Display results as an overlay on the grid with grid opacity lowered
+**Line through the winning rows 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

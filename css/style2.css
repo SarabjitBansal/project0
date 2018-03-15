@@ -6,8 +6,6 @@ body {
   /* width:960px; */
   margin: 0 auto;
   text-align: center;
-  /* background-color: pink; */
-  /* background-image: url("/project0/images/notebook_2.jpg"); */
   background-image:url("../images/notebook_3.jpg") ;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,35 +15,34 @@ body {
 #container {
   text-align: center;
   margin-top: 50px;
-
 }
+
 table {
   margin-left:auto;
   margin-right:auto;
   border-spacing: 0.5rem;
   border-collapse: collapse;
+}
+ #tbl tr {
 
-  /* border: 1px solid black; */
 }
 
 td {
-
    color: Blue;
-   font-style: bold;
+   font-weight: bold;
    border: 2px groove #e82171;
    font-family: 'Indie Flower', cursive;
+   font-size: 20px;
 
-
-   /* border-collapse: collapse; */
 }
+
 .boxes {
   height: 5em;
   width: 5em;
   text-align: center;
 }
 
-#playAgain{
-
+#playAgain {
   margin-top: 1em;
   width:10em;
   height: 3em;
@@ -54,6 +51,7 @@ td {
   font-size: 20px;
   font-family: 'Indie Flower', cursive;
 }
+
 .players {
   color: black;
   height:2em;
@@ -63,26 +61,21 @@ td {
   font-family: 'Indie Flower', cursive;
   font-size: 18px;
   background-color: transparent;
-  /* background: #ffe6e6; */
-
 }
+
 #gridSize {
   width:60px;
   height:20px;
   text-align:right;
   font-family: 'Indie Flower', cursive;
   font-size: 15px;
-
 }
 .clearBoard {
 
   /* background-color: white; */
 
 }
-.higlight {
-  background-color:#cce6ff;
 
-}
 .nobordersT {
     border-top: 0;
 }
@@ -109,23 +102,22 @@ h2 {
   font-family: 'Indie Flower', cursive;
 
 }
-/* h1h2 p{
-  font-family: 'Exo 2', sans-serif;
-} */
 
-/* .Nhiglight {
-  background-color: #ccc;
-
-} */
 p {
 
   font-family: 'Indie Flower', cursive ;
   font-size: 20px;
 }
+
 .players:hover {
     background-color: #ffe6e6;
 }
-
+#player1:active {
+    background-color: #ffe6e6;
+}
+#player2:active {
+    background-color: #ffe6e6;
+}
 .displayNone {
   display: none;
 }

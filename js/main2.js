@@ -4,7 +4,7 @@
 // 3.Artifical Intelligence
 // 4.Work on CSS
 
-  let result;
+let result;
 // func to clear board
 const clearboard = function() {
   $('.boxes').addClass('clearBoard');
@@ -23,9 +23,17 @@ const clearboard = function() {
   $('#tbl').addClass("displayNone");
   $('#size').addClass("displayNone");
   $('#disp').addClass("displayNone");
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+       game2.storeBoard[i][j] = "";
+    }
+  }
+
 }
 
 // to create Board N * N
+// In case of Player1 -3X3 -
+// In case of Player2 - user enters size
 const createBoard = function(boardSize) {
 
   if (boardSize !== "" && typeof(boardSize) !== 'undefined') {
@@ -43,20 +51,20 @@ const createBoard = function(boardSize) {
             cell.addClass("diag1");
           }
 
-          ///// clear outer borders
+          // clear borders - assigned classes
           if (i=== 0){cell.addClass('nobordersT')}
           if (j=== 0){cell.addClass('nobordersL')}
           if (i === boardSize-1){cell.addClass('nobordersB')}
           if (j === boardSize-1){cell.addClass('nobordersR')}
 
-        /////
+        //
       }
     }
+    $('#tbl').removeClass('animated rubberBand');
     $('#tbl').show();
     $('#disp').removeClass('displayNone');
-    //$("tbl").addClass("animated rubberBand");
+    $('#tbl').addClass('animated rubberBand');
   }
-
 
   // $('#tbl').trigger('click');
   if (game2.playerNo === "1p") {
@@ -73,6 +81,7 @@ const createBoard = function(boardSize) {
 
       game2.storeBoard[1][1] = game2.aiPlayer;
       game2.letterPlayed =game2.aiPlayer;
+      this.letterPlayed = "X";
       nextLetter = "O";
       $('h2').html(`${nextLetter} turn`);
     }
@@ -91,14 +100,11 @@ $('#gridSize').on('change',function() {
 });
 
 $(document).ready(function() {
-//func ends
-  // $('#disp').html(`X:${game2.xWon} O:${game2.oWon}`);
-  $('#disp').html(`Score - X: ${game2.xWon}    |    O: ${game2.oWon}`);
-
- result = false;
+  result = false;
   let nextLetter ="";
   game2.xWon=0;
   game2.oWon=0;
+  $('#disp').html(`Score - X: ${game2.xWon}    |    O: ${game2.oWon}`);
 
   // on click of table
   // we are considering target as the table is created in run time
@@ -106,82 +112,51 @@ $(document).ready(function() {
   $('#tbl').on('click', function(event) {
     var $element = event.target;
     $('#playAgain').removeClass('displayNone');
-    if (!result) {
+    if (!result)
+    {
       if ($element.innerHTML !== "X" && $element.innerHTML !== "O")
       {
+
         var letter = game2.startGame();
         //console.log(letter);
         //  gettin letter from func startgame.
         //(($element.id) !== 'tbl') - as we are considering the tbl - it updates the table
-          if ($element.id !== 'tbl' && typeof($element.id)!== "undefined")   {
-            // debugger;
-            // new code
-            // $element.innerHTML = letter;
-
-            //console.log("Array is:" + game2.storeBoard[k][t]);
-
-            ////////
-
-            if (letter === "X") {
-              nextLetter = "O";
-            } else if (letter === "O"){
-              nextLetter = "X";
-            }
+          if ($element.id !== 'tbl' && typeof($element.id)!== "undefined")
+          {
+            var newId = $element.id.replace('B','');
+            var k = newId[0];
+            var t = newId[1];
+            $('#B'+k+t).removeClass('animated bounce');
+            $('#B'+k+t).addClass('animated bounce');
+            if (letter === "X") { nextLetter = "O"; }
+            else if (letter === "O") { nextLetter = "X"; }
             $('h2').html(`${nextLetter} turn`);
-            if (game2.playerNo === "1p") {
+            if (game2.playerNo === "1p")
+            {
 
-              var newId = $element.id.replace('B','');
-              var k = newId[0];
-              var t = newId[1];
               game2.storeBoard[k][t]= letter;
               //console.log("First Index"+ k + "Sec Index"+ t);
 
               if (letter === "O")
                 {
                   $element.innerHTML = letter;
-
-                  // $('.boxes').addClass("animated rubberBand");
-
-                  //console.log("im here");
                   //$element.innerHTML ="<img src ='images/o_3.png' />";
                   setTimeout(function() {
-                    placeX($element.id.replace("B",""));
-                    winner(game2.gridSize, letter);
+                  placeX($element.id.replace("B",""));
+                  winner(game2.gridSize, letter);
 
                   }, 400);
                   // placeX($element.id.replace("B",""));
                 }
-              // else if (letter === "X")
-              // {
-                // $element.innerHTML = letter;
 
-              // }
-
-            } else if(game2.playerNo === "2p")
-              {
-//////////////////
-
-                  $element.innerHTML = letter;
-                  var size = ($('#gridSize').val());
-                  //console.log(size);
-                  winner(size, letter);
-                }
-
-            ///////////////////////////////////
-
-
-
-          // updating teh score Board
-          //console.log($element.id);
-
-          //////
-
-
-          //winner($element.html());
-          //console.log($('#gridSize').val());
-          //winner(game2.gridSize, letter);
+            }
+            else if(game2.playerNo === "2p")
+            {
+              $element.innerHTML = letter;
+              var size = ($('#gridSize').val());
+              winner(size, letter);
+            }
         }
-
       }
     }
   });
@@ -225,7 +200,7 @@ var placeX = function(pos) {
     if (!chkres) {
 
       var randomNo = randomno();
-      if (typeof(randomno)!== "undefined") {
+      if (typeof(randomNo)!== "undefined") {
         // console.log(randomNo);
         m = randomNo[0];
         n = randomNo[1];
@@ -244,21 +219,20 @@ var placeX = function(pos) {
 
 }
   // play agin - to reset the screen
-  $('#playAgain').on('click',function(e) {
+  $('#playAgain').on('click',function() {
     clearboard();
      result = false;
      $('#playAgain').addClass('displayNone');
-    // for (let i =1; i <= (9); i ++) {
-    //   // $('#box'+i).addClass('Nhiglight');
-    //   $('#box'+i).removeClass('higlight');
-    // }
   });
   // func ends
-  $('#player1').on('click',function(e) {
-    console.log("Before Animation");
+  $('#player1').on('click',function() {
+    //debugger;
+
     $('#player1').removeClass("animated rubberBand");
     $('#player1').addClass("animated rubberBand");
-    console.log("After Animation");
+
+
+
     game2.playerNo = "1p";
     $('#size').hide();
     $('#tbl').empty();
@@ -266,7 +240,7 @@ var placeX = function(pos) {
   });
 
 
-  $('#player2').on('click',function(e) {
+  $('#player2').on('click',function() {
 
     $('#player2').addClass("animated rubberBand");
     game2.playerNo = "2p";
@@ -280,18 +254,17 @@ var placeX = function(pos) {
   // function to check winner
   const winner = function (gridSize, curBoxID) {
      result = false;
-     //debugger;
-     // if (gridSize > 3) {
-     //   //TODO - to check winner fro bigger box;
-     //
-     // }
 
      if ($('#tbl tr').length > 0)
      { //debugger;
+       game2.cntr=0;
        for (let i = 0; i < gridSize; i++)
        {
           if (game2.checkWinner($('.row'+i)) === true||game2.checkWinner($('.col'+i)) === true ||game2.checkWinner($('.diag0')) === true|| game2.checkWinner($('.diag1')) === true)
           { result = true; }
+
+
+
         }
         //debugger;
           if (result === true) {
@@ -318,6 +291,11 @@ var placeX = function(pos) {
               $('#disp').html(`Score - X: ${game2.xWon}    |    O: ${game2.oWon}`);
 
             }
+            else {
+              // if (game2.cntr === gridSize*gridSize){
+              //     $('h2').html(`XO Draw`);
+              // }
+            }
 
           }
 
@@ -326,15 +304,13 @@ var placeX = function(pos) {
 });
 
  var randomno = function() {
-   //console.log("RANDOM")
-   var k;
-   for (var i = 0; i < 3; i++) {
-     for (var j = 0; j < 3; j++) {
+  var k;
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
       if (game2.storeBoard[i][j]!== "X" && game2.storeBoard[i][j]!== "O")
-       {  k = i.toString()+j.toString();
+        {  k = i.toString()+j.toString();
           return(k);
+        }
       }
-     }
-   }
-
+    }
  }
