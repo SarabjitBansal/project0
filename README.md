@@ -18,11 +18,11 @@ CSS
 
 1 Player - In this mode user plays(O) with the computer(X). There is a timer for placing (X) against the users move(O).
 
-![alt text](screenshots/1.png "1 Player Game")
+![alt text](/screenshots/1.png "1 Player Game")
 
 2 Players - In this mode 2 players can play game choosing either X or O. There is an additional option of choosing the grid size of 3 or 4 in this mode. Grids are created in Javascript.
 
-![alt text](screenshots/2.png "2 Player Game")
+![alt text](/screenshots/2.png "2 Player Game")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This project has two .js files - main2.js and game2.js. The game2.js file has all the functionalty and main2.js is the presentation file.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,5 +48,5 @@ Future Improvements:
 **Work on CSS - try to incorporate more animations and nicer backgrounds, icon selection instead of X,O
 **Improved user experience
 **Display results as an overlay on the grid with grid opacity lowered
-**Line through the winning rows 
+**Line through the winning rows
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
