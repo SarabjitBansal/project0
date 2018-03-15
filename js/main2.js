@@ -20,8 +20,10 @@ const clearboard = function() {
     nextLetter = "";
     $('playAgain').addClass("displayNone");
     $('#tbl').addClass("displayNone");
-    $('#size').addClass("displayNone");
     $('#disp').addClass("displayNone");
+    $('#size').hide();
+    $('#player2').removeClass('color')
+    $('#player1').removeClass('color')
     for (var i = 0; i < 3; i++) {
         for (var j = 0; j < 3; j++) {
             game2.storeBoard[i][j] = "";
@@ -226,6 +228,7 @@ $(document).ready(function() {
         clearboard();
         result = false;
         $('#playAgain').addClass('displayNone');
+
     });
     // func ends
     $('#player1').on('click', function() {
@@ -235,6 +238,8 @@ $(document).ready(function() {
         game2.playerNo = "1p";
         $('#size').hide();
         $('#tbl').empty();
+        $('#player1').addClass('color')
+        $('#player2').removeClass('color')
         createBoard(game2.gridSize);
     });
 
@@ -249,6 +254,8 @@ $(document).ready(function() {
         $('h2').html("");
         $('#gridSize').val("");
         $('#disp').addClass("displayNone");
+        $('#player2').addClass('color')
+        $('#player1').removeClass('color')
 
     });
     // function to check winner

@@ -112,10 +112,15 @@ p {
 .players:hover {
     background-color: #ffe6e6;
 }
-#player1:active {
+
+.color {
+  background-color: #ffe6e6;
+}
+#player1:focus {
     background-color: #ffe6e6;
 }
-#player2:active {
+
+#player2:focus {
     background-color: #ffe6e6;
 }
 .displayNone {

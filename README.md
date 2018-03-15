@@ -30,7 +30,8 @@ This project has two .js files - main2.js and game2.js. The game2.js file has al
 
 This function creates the N*N size board.
 
-````````javascript```````
+
+```javascript
 
 const createBoard = function(boardSize) {
 
@@ -45,15 +46,16 @@ const createBoard = function(boardSize) {
     }
   }
 }
-
-``````
-
+``````````
 Future Improvements:
 
 
-**Improved AI - refer to minimax algorithm
-**Work on CSS - try to incorporate more animations and nicer backgrounds, icon selection instead of X,O
-**Improved user experience
-**Display results as an overlay on the grid with grid opacity lowered
-**Line through the winning rows
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1.Improved AI  - refer to minimax algorithm
+
+2.Work on CSS** - try to incorporate more animations & nicer     backgrounds, icon selection instead of X,O
+
+3.Improved user experience
+
+4.Display results as an overlay on the grid with grid opacity lowered
+
+5.Line through the winning rows
