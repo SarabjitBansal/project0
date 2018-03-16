@@ -10,8 +10,8 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size:cover;
-
 }
+
 #container {
   text-align: center;
   margin-top: 50px;
@@ -23,17 +23,13 @@ table {
   border-spacing: 0.5rem;
   border-collapse: collapse;
 }
- #tbl tr {
-
-}
 
 td {
-   color: Blue;
-   font-weight: bold;
-   border: 2px groove #e82171;
-   font-family: 'Indie Flower', cursive;
-   font-size: 20px;
-
+ color: Blue;
+ font-weight: bold;
+ border: 2px groove #e82171;
+ font-family: 'Indie Flower', cursive;
+ font-size: 20px;
 }
 
 .boxes {
@@ -70,37 +66,40 @@ td {
   font-family: 'Indie Flower', cursive;
   font-size: 15px;
 }
+
 .clearBoard {
-
   /* background-color: white; */
-
 }
 
 .nobordersT {
     border-top: 0;
 }
+
 .nobordersB {
     border-bottom: 0;
 }
+
 .nobordersL {
     border-left: 0;
 }
+
 .nobordersR {
     border-right: 0;
-}
-.lineThrough{
-   text-decoration: line-through;
-}
-h1{
+ }
 
+.lineThrough {
+   text-decoration: line-through;
+ }
+
+h1 {
   text-align: center;
   font-family: 'Indie Flower', cursive;
-}
+ }
+
 h2 {
   font-size: 16px;
   text-align: center;
   font-family: 'Indie Flower', cursive;
-
 }
 
 p {
@@ -115,13 +114,6 @@ p {
 
 .color {
   background-color: #ffe6e6;
-}
-#player1:focus {
-    background-color: #ffe6e6;
-}
-
-#player2:focus {
-    background-color: #ffe6e6;
 }
 .displayNone {
   display: none;
