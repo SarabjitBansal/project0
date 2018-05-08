@@ -7,7 +7,7 @@
 
 Tic-tac-toe is a one or two player game. Players can choose X or O taking turns marking cells in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical or diagonal row wins the game.
 
-https://soniabansal08.github.io/project0/
+https://sarabjitbansal.github.io/project0/
 
 
 This project includes:
